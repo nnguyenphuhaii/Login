@@ -5,17 +5,18 @@
 --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Trang chủ</title>
-</head>
-<body>
-    <h1>Chào mừng ${sessionScope.username} đến với trang web!</h1>
-    <br>
-    <a href="logoutServlet">Đăng xuất</a>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome Page</title>
+    </head>
+    <body>
+        <h1>Welcome Page</h1>
+        <p>Xin chào, <%= session.getAttribute("username")%>!</p>
+        <form action="logoutServlet" method="POST">
+            <input type="submit" value="Đăng xuất">
+        </form>
+    </body>
 </html>
